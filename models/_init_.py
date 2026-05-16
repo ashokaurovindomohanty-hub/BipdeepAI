@@ -1,1 +1,1 @@
-sfg
+from .model import Model
