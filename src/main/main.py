@@ -1,4 +1,3 @@
-python
 from configs.config import Config
 from data.utils import load_data
 from models.model import Model
