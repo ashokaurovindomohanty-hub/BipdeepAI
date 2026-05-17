@@ -52,3 +52,12 @@ class Model:
   # ...
   def train(self, X_train, y_train):
     self.model.fit(X_train, y_train)
+python
+from data.utils import load_data
+class Model:
+  def __init__(self, file_path='data/dataset.csv'):
+    # Load dataset
+    self.data = load_data(file_path)
+    # Split data into features (X) and target variable (y)
+    self.X = self.data.iloc[:, :-1]
+    self.y = self.data.iloc[:, -1]
