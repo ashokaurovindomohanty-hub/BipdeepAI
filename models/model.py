@@ -46,6 +46,7 @@ class Model:
   def train(self, X_train, y_train):
     self.model.fit(X_train, y_train)
 from data.utils import load_data
+from sklearn.ensemble import RandomForestClassifier
 class Model:
   def __init__(self, file_path='data/dataset.csv'):
     # Load dataset
@@ -53,3 +54,6 @@ class Model:
     # Split data into features (X) and target variable (y)
     self.X = self.data.iloc[:, :-1]
     self.y = self.data.iloc[:, -1]
+    self.model = RandomForestClassifier()
+  def train(self, X, y):
+    self.model.fit(X, y)
