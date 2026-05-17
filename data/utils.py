@@ -1,7 +1,6 @@
 import pandas as pd
 def load_data(file_path):
   return pd.read_csv(file_path)
-python
 import pandas as pd
 def handle_missing_values(df):
   # Replace missing values with mean for numeric columns
@@ -11,7 +10,6 @@ def handle_missing_values(df):
   categorical_cols = df.select_dtypes(include=['object']).columns
   df[categorical_cols] = df[categorical_cols].fillna(df[categorical_cols].mode().iloc[0])
   return df
-python
 from sklearn.preprocessing import OneHotEncoder
 def encode_categorical_variables(df):
   categorical_cols = df.select_dtypes(include=['object']).columns
@@ -22,14 +20,12 @@ def encode_categorical_variables(df):
   numeric_df = df.select_dtypes(include=['int64', 'float64'])
   df = pd.concat([numeric_df, encoded_df], axis=1)
   return df
-python
 from sklearn.preprocessing import StandardScaler
 def scale_numeric_variables(df):
   numeric_cols = df.select_dtypes(include=['int64', 'float64']).columns
   scaler = StandardScaler()
   df[numeric_cols] = scaler.fit_transform(df[numeric_cols])
   return df
-python
 def load_data(file_path):
   # Load dataset
   df = pd.read_csv(file_path)
