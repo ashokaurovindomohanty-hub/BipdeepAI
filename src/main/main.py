@@ -1,5 +1,5 @@
-from configs.config import Config
-from data.utils import load_data
+from utils.api_utils import call_api
+from utils.data import load_data
 from models.model import Model
 def main():
   model = Model()
