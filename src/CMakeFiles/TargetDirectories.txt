@@ -1,0 +1,2 @@
+/data/data/com.termux/files/home/BipdeepAI/src/CMakeFiles/edit_cache.dir
+/data/data/com.termux/files/home/BipdeepAI/src/CMakeFiles/rebuild_cache.dir
