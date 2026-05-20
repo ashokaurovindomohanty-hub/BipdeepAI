@@ -11,9 +11,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Deploy BipdeepAI
         env:
-          APP_ID: ${{ secrets.APP_ID }} # use secret variable
-          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }} # use secret variable
+          APP_ID: ${{ secrets.APP_ID }} 
         run: |
+          mkdir -p /github/home/src/utils/
+          echo ${{ secrets.PRIVATE_KEY }} | base64 --decode > /github/home/src/utils/private-key.pem
           python -m pip install pygithub requests
           python -c "
             import api_utils
